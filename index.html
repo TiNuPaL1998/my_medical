@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Explore Your Strengths</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Explore Your Strengths</h1>
+    <p>Your Health Companion</p>
+  </header>
+
+  <div class="main-container">
+
+    <!-- BMI CARD -->
+    <div class="card">
+      <h2>BMI Calculator</h2>
+      <input type="number" id="height" placeholder="Height (cm)">
+      <input type="number" id="weight" placeholder="Weight (kg)">
+      <button onclick="calculateBMI()">Calculate</button>
+      <p id="bmiResult"></p>
+    </div>
+
+    <!-- MEDICINE SEARCH -->
+    <div class="card">
+      <h2>Medicine Finder</h2>
+      <input type="text" id="searchInput" placeholder="Search medicine (e.g. PAN-D)">
+      <button onclick="searchMedicine()">Search</button>
+    </div>
+
+  </div>
+
+  <!-- POPUP -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span onclick="closePopup()" class="close">&times;</span>
+      <h2 id="medName"></h2>
+      <p id="medDesc"></p>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
