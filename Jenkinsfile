@@ -5,25 +5,26 @@ pipeline {
 
         stage('Clone') {
             steps {
-                git 'https://github.com/your-username/explore-your-strengths.git'
+                echo "Cloning repo..."
+                git 'https://github.com/TiNuPaL1998/my_medical.git'
             }
         }
 
-        stage('Build') {
+        stage('Verify') {
             steps {
-                echo "Static website - no build required"
-            }
-        }
-
-        stage('Test') {
-            steps {
+                echo "Checking files..."
                 sh 'ls -l'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo "Deploy step (we will improve later)"
+                echo "Deploying to Nginx..."
+
+                sh '''
+                sudo rm -rf /var/www/html/*
+                sudo cp -r * /var/www/html/
+                '''
             }
         }
     }
